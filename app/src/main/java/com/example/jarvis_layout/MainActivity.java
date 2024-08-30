@@ -147,7 +147,14 @@ public class MainActivity extends AppCompatActivity {
                             stopRecording();
                             recordButton.setScaleX((float) 1.00);
                             recordButton.setScaleY((float) 1.00);
+
+                            File wavfile = new File(filename+".wav");
+                            if(wavfile.exists()){
+                                wavfile.delete();
+                            }
+
                             convertToWav(filename + ".3gp", filename + ".wav");
+
                             showToast("Save Succesed,Duration:" + pressDuration + "ms");
 
 
@@ -246,9 +253,11 @@ public class MainActivity extends AppCompatActivity {
         String[] cmd = {"-i", inputFilePath, outputFilePath};
         FFmpeg.executeAsync(cmd, (executionId, returnCode) -> {
             if (returnCode == Config.RETURN_CODE_SUCCESS) {
+                showToast("Conversion to WAV successed");
                 Log.e("FFmpeg", "Conversion to WAV successed");
 
             } else {
+                showToast("Conversion to WAV failed");
                 Log.e("FFmpeg", "Conversion to WAV failed");
             }
         });
@@ -305,7 +314,6 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onWaveFormDataCapture(Visualizer visualizer, byte[] waveform, int samplingRate) {
                     float amplitude = getAmplitudeFromWaveform(waveform);
-
                     audioVisualizerSphereView.setAmplitude(amplitude);
                 }
 
