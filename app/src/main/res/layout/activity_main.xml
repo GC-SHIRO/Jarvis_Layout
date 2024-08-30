@@ -100,75 +100,79 @@
 
     <ImageButton
         android:id="@+id/RecordButton"
-        android:layout_width="50dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="156dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="164dp"
         android:background="@null"
         android:scaleType="fitCenter"
-        android:src="@drawable/record_icon"
+        android:src="@drawable/audio_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/audioVisualizerSphere1" />
 
     <ImageButton
         android:id="@+id/weather"
-        android:layout_width="46dp"
-        android:layout_height="43dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginEnd="36dp"
+        android:scaleType="fitXY"
         android:background="@null"
         app:layout_constraintBottom_toBottomOf="@+id/RecordButton"
         app:layout_constraintEnd_toStartOf="@+id/RecordButton"
         app:layout_constraintTop_toTopOf="@+id/RecordButton"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_popup_reminder" />
+        app:srcCompat="@drawable/weather_icon" />
 
     <ImageButton
         android:id="@+id/musicbutton"
-        android:layout_width="34dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="28dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
         android:background="@null"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/music_icon" />
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="31dp"
-        android:layout_height="27dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginStart="164dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="4dp"
         android:background="@null"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/jarvisgif"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+        app:srcCompat="@drawable/image_icon" />
 
     <TextView
         android:id="@+id/timeTextView"
-        android:layout_width="266dp"
-        android:layout_height="21dp"
+        android:layout_width="249dp"
+        android:layout_height="12dp"
         android:layout_gravity="center"
         android:layout_marginBottom="4dp"
         android:text="Time will be here"
         android:textColor="#2a8a9d"
-        android:textSize="16sp"
+        android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/RecordButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/wifi_setting_button"
-        android:layout_width="36dp"
-        android:layout_height="34dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="44dp"
+        android:layout_marginEnd="36dp"
         android:background="@null"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_preferences" />
+        app:srcCompat="@drawable/wifi_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

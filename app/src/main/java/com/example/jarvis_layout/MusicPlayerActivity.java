@@ -12,6 +12,9 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.view.View;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,14 +60,22 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
         EdgeToEdge.enable(this);
         setContentView(R.layout.music_player_activity_main);
 
+        getWindow().getDecorView().post(() -> hideSystemBars());//隐藏系统栏
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // 权限请求
-
+        Button button = findViewById(R.id.cancel);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MusicPlayerActivity.this,MainActivity.class);
+                stopMusic();
+                startActivity(intent);
+            }
+        });
 
 
         initView();
@@ -259,6 +270,28 @@ public class MusicPlayerActivity extends AppCompatActivity implements View.OnCli
         }else if(nowId == R.id.local_music_iv_icon){
             Intent intent = new Intent(this, LyricView.class);
             startActivity(intent);
+        }
+    }
+
+    //隐藏bar
+    private void hideSystemBars() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // API 30 及以上：使用 WindowInsetsController
+            getWindow().setDecorFitsSystemWindows(false);  // 使内容可以延伸到系统栏区域
+            View decorView = getWindow().getDecorView();
+            WindowInsetsController insetsController = decorView.getWindowInsetsController();
+            if (insetsController != null) {
+                insetsController.hide(WindowInsets.Type.statusBars() | WindowInsets.Type.navigationBars());
+                insetsController.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+            }
+        } else {
+            // API 30 以下：使用 SYSTEM_UI_FLAG
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
     }
 

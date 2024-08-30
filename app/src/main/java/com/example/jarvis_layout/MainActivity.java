@@ -1,8 +1,10 @@
 package com.example.jarvis_layout;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Paint;
 import android.media.AudioManager;
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         getWindow().getDecorView().post(() -> hideSystemBars());//隐藏系统栏
 
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED
@@ -103,11 +106,14 @@ public class MainActivity extends AppCompatActivity {
 
         //处理录音部分
         ImageButton recordButton = findViewById(R.id.RecordButton);
+
+
         File tempDir = getTempDirectory();
         filename = tempDir.getAbsolutePath() + "/Recording";
         mprec = MediaPlayer.create(this, R.raw.record_over);//获取录音部分
-        audioVisualizerSphereView = findViewById(R.id.audioVisualizerSphere1);
         mprec.setOnPreparedListener(mediaPlayer -> setupVisualizer());
+        audioVisualizerSphereView = findViewById(R.id.audioVisualizerSphere1);
+
 
         recordButton.setOnTouchListener(new View.OnTouchListener() {
             @SuppressLint("ClickableViewAccessibility")
