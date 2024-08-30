@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/planet"
+        android:layout_width="175dp"
+        android:layout_height="147dp"
+        android:layout_marginEnd="172dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/audioVisualizerSphere1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/planet" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="245dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginBottom="124dp"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/decoration1" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="358dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginBottom="356dp"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/decoration3" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="310dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView8"
+        app:srcCompat="@drawable/decoration3" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="251dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="488dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/decoration4" />
+
+    <com.example.jarvis_layout.AudioVisualizerSphereView
+        android:id="@+id/audioVisualizerSphere1"
+        android:layout_width="231dp"
+        android:layout_height="219dp"
+        app:layout_constraintBottom_toBottomOf="@+id/jarvisgif"
+        app:layout_constraintEnd_toEndOf="@+id/jarvisgif"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/jarvisgif"
+        app:layout_constraintTop_toTopOf="@+id/jarvisgif"
+        app:layout_constraintVertical_bias="0.559" />
+
+    <ImageView
+        android:id="@+id/light"
+        android:layout_width="311dp"
+        android:layout_height="572dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/audioVisualizerSphere1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="@+id/jarvisgif"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115"
+        app:srcCompat="@drawable/bg9" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/jarvisgif"
+        android:layout_width="235dp"
+        android:layout_height="223dp"
+        android:src="@drawable/jarvis2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <ImageButton
+        android:id="@+id/RecordButton"
+        android:layout_width="50dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="156dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/record_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audioVisualizerSphere1" />
+
+    <ImageButton
+        android:id="@+id/weather"
+        android:layout_width="46dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="36dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/RecordButton"
+        app:layout_constraintEnd_toStartOf="@+id/RecordButton"
+        app:layout_constraintTop_toTopOf="@+id/RecordButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_popup_reminder" />
+
+    <ImageButton
+        android:id="@+id/musicbutton"
+        android:layout_width="34dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="28dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="31dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginBottom="12dp"
+        android:background="@null"
+        app:layout_constraintBottom_toTopOf="@+id/jarvisgif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="266dp"
+        android:layout_height="21dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="4dp"
+        android:text="Time will be here"
+        android:textColor="#2a8a9d"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/RecordButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/wifi_setting_button"
+        android:layout_width="36dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="44dp"
+        android:background="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

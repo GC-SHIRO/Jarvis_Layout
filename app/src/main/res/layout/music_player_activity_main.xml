@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@mipmap/bg2"
+    android:id="@+id/main"
+    tools:context=".MusicPlayerActivity">
+
+    <RelativeLayout
+        android:id="@+id/local_music_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#33EEEEEE">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#9933FA" />
+
+        <ImageView
+            android:id="@+id/local_music_iv_icon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/a1"
+            android:src="@mipmap/icon_song" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_toRightOf="@id/local_music_iv_icon"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/local_music_tv_song"/>
+
+        <TextView
+            android:id="@+id/local_music_tv_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:layout_below="@id/local_music_tv_song"
+            android:layout_alignLeft="@id/local_music_tv_song"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_next"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:id="@+id/local_music_iv_next"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_play"
+            android:layout_toLeftOf="@id/local_music_iv_next"
+            android:layout_marginRight="20dp"
+            android:id="@+id/local_music_iv_play"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_last"
+            android:layout_toLeftOf="@id/local_music_iv_play"
+            android:layout_marginRight="20dp"
+            android:id="@+id/local_music_iv_last"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/local_music_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/local_music_bottom_layout">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

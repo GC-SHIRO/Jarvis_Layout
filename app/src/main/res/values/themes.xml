@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Jarvis_Layout" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="Theme.Application01" parent="Base.Theme.Jarvis_Layout" />
+
+    <style name="Theme.SplashScreen" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- 设置启动页面的背景 -->
+        <item name="android:windowBackground">@color/black</item>
+        <!-- 隐藏 ActionBar -->
+        <item name="windowNoTitle">true</item>
+        <!-- 让状态栏透明以全屏显示 -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="Theme.Jarvis_Layout" parent="Base.Theme.Jarvis_Layout" />
+</resources>
